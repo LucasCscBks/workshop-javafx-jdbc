@@ -2,8 +2,8 @@ package com.studies.application;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,9 +20,12 @@ public class App extends Application {
         try {
             String path = "src/main/java/com/studies/gui/MainView.fxml";
             System.out.println("Diretório de trabalho: " + System.getProperty("user.dir"));
-            Parent parent = FXMLLoader.load(Paths.get(path).toUri().toURL());
+            ScrollPane scrollPane = FXMLLoader.load(Paths.get(path).toUri().toURL());
+            scrollPane.setFitToHeight(true);
+            scrollPane.setFitToWidth(true);
 
-            Scene mainScene = new Scene(parent);
+
+            Scene mainScene = new Scene(scrollPane);
             primaryStage.setScene(mainScene);
             primaryStage.setTitle("Sample JavaFX application");
             primaryStage.show();
