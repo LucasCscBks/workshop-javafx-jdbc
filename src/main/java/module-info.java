@@ -4,5 +4,7 @@ module com.studies {
 
     opens com.studies.application to javafx.fxml;
     opens com.studies.gui to javafx.fxml;
+    opens com.studies.model.entities to javafx.fxml;
+    exports com.studies.model.entities;
     exports com.studies.application;
 }
