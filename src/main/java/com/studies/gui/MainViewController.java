@@ -3,7 +3,6 @@ package com.studies.gui;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.nio.file.Paths;
 
 import com.studies.application.App;
 import com.studies.gui.util.Alerts;
@@ -36,12 +35,11 @@ public class MainViewController implements Initializable{
 
     @FXML
     public void onMenuItemDepartmentAction() {
-        System.out.println("MENU ITEM SELLER DEPARTMENT");
+        loadView("DepartmentList.fxml");
     } 
 
     @FXML
     public void onMenuItemAboutAction() {
-        // loadView("src/main/java/com/studies/gui/About.fxml");
         loadView("About.fxml");
     } 
 
