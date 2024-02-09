@@ -44,7 +44,7 @@ public class MainViewController implements Initializable{
     } 
 
     @Override
-    public void initialize(URL uri, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) {
         
     }
 
@@ -63,6 +63,7 @@ public class MainViewController implements Initializable{
             mainVBox.getChildren().addAll(newVBox.getChildren());
 
         } catch (IOException e) {
+            System.out.println(e.getMessage());
             Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
         }
     }
