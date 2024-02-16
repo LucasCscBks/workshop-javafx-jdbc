@@ -13,6 +13,7 @@ import com.studies.gui.listeners.DataChangeListener;
 import com.studies.gui.util.Alerts;
 import com.studies.gui.util.Utils;
 import com.studies.model.entities.Seller;
+import com.studies.model.services.DepartmentService;
 import com.studies.model.services.SellerService;
 
 import javafx.beans.property.ReadOnlyObjectWrapper;
@@ -114,7 +115,8 @@ public class SellerListController implements Initializable, DataChangeListener {
 
             SellerFormController controller = loader.getController();
             controller.setSeller(obj);
-            controller.setSellerService(new SellerService());
+            controller.setServices(new SellerService(), new DepartmentService());
+            controller.loadAssociatedObjects();
             controller.subscribeDataChangeListener(this);
             controller.updateFormData();
 
@@ -127,8 +129,7 @@ public class SellerListController implements Initializable, DataChangeListener {
             dialogStage.showAndWait();
 
         } catch (IOException e) {
-            System.out.println("DEU ERRO NESSA PORRA");
-            System.out.println(e.getMessage());
+            e.printStackTrace();
             Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
         }
     }
