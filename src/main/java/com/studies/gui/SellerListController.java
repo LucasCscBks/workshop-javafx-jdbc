@@ -127,6 +127,8 @@ public class SellerListController implements Initializable, DataChangeListener {
             dialogStage.showAndWait();
 
         } catch (IOException e) {
+            System.out.println("DEU ERRO NESSA PORRA");
+            System.out.println(e.getMessage());
             Alerts.showAlert("IO Exception", "Error loading view", e.getMessage(), AlertType.ERROR);
         }
     }
