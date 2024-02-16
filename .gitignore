@@ -40,3 +40,6 @@ build/
 nbbuild/
 dist/
 nbdist/
+
+### ###
+.settings/
